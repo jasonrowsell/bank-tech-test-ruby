@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test)
+[![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/)
 
 [Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories)
 
@@ -97,3 +97,35 @@ As a Bank Manager,
 In order to maintain a structured business model,
 I want withdrawals accessible only if sufficient funds are present.
 ```
+
+### CRC Cards
+
+| Class                     | Account          |
+| ------------------------- | ---------------- |
+| Responsibilties           | Collaborators    |
+| ------------------------- | ---------------- |
+| Knows current balance     | Transaction      |
+| Knows transaction records | Printer          |
+| Deposit amount            |                  |
+| Withdraw amount           |                  |
+| Print bank statement      |                  |
+
+| Class                     | Transaction      |
+| ------------------------- | ---------------- |
+| Responsibilties           | Collaborators    |
+| ------------------------- | ---------------- |
+| Knows date                |                  |
+| Knows credit amount       |                  |
+| Knows debit amount        |                  |
+| Knows updated balance     |                  |
+
+| Class                       | Printer          |
+| --------------------------- | ---------------- |
+| Responsibilties             | Collaborators    |
+| -------------------------   | ---------------- |
+| Render a string output      |                  |
+| Format integers to currency |                  |
+
+### Sequence Diagrams
+
+![Depositing funds](./images/deposit.png)

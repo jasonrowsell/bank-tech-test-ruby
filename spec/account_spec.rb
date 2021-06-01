@@ -3,8 +3,22 @@ RSpec.describe Account do
   let(:transaction) { class_double(Transaction).as_stubbed_const }
   let(:printer) { class_double(Printer).as_stubbed_const }
 
-  it "is initialized with a balance of 0" do
-    expect(subject.balance).to be_zero
+  describe "#balance" do
+    it "is initialized with a balance of 0" do
+      expect(subject.balance).to be_zero
+    end
+
+    context "after a series of transactions" do
+      before(:each) do
+        subject.deposit(1000)
+        subject.deposit(2000)
+        subject.withdraw(500)
+      end
+
+      it "calculates running balance" do
+        expect(subject.balance).to eq 2500
+      end
+    end
   end
 
   describe "#deposit" do

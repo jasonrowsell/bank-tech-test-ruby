@@ -1,10 +1,10 @@
 RSpec.describe Transaction do
   let(:current_date) { Time.now.strftime("%d/%m/%Y") }
 
-  describe "#amount" do
+  describe "#balance" do
     it "returns the amount" do
-      subject = described_class.new({ amount: 1000 })
-      expect(subject.amount).to eq 1000
+      subject = described_class.new({ balance: 1000 })
+      expect(subject.balance).to eq 1000
     end
   end
 

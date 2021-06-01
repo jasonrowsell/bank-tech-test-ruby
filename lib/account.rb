@@ -3,12 +3,15 @@ require_relative "exceptions"
 class Account
   include Exceptions
 
-  attr_reader :balance
-
   INITIAL_BALANCE = 0
 
+  attr_reader :balance
+
   def initialize
+    @transaction = Transaction
+    @printer = Printer
     @balance = INITIAL_BALANCE
+    @transactions = []
   end
 
   def deposit(amount)
@@ -19,5 +22,9 @@ class Account
     raise Exceptions::TransactionError, "Insufficient funds" if amount > @balance
 
     @balance -= amount
+  end
+
+  def print_statement
+    @printer.new.display
   end
 end

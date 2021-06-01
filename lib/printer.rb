@@ -1,5 +1,5 @@
 class Printer
-  STATEMENT_HEADER = /date || credit || debit || balance\n/
+  STATEMENT_HEADER = "date || credit || debit || balance\n"
 
   def display
     print STATEMENT_HEADER

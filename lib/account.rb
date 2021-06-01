@@ -15,6 +15,7 @@ class Account
   end
 
   def deposit(amount)
+    create_transaction({credit: amount})
     @balance += amount
   end
 
@@ -26,5 +27,12 @@ class Account
 
   def print_statement
     @printer.print
+  end
+
+  private
+
+  def create_transaction(data)
+    new_transaction = @transaction.new(data)
+    @transactions.push(new_transaction)
   end
 end

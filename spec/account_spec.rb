@@ -1,5 +1,6 @@
 RSpec.describe Account do
   let(:subject) { described_class.new }
+  let(:transaction) { class_double(Transaction).as_stubbed_const }
   let(:printer) { class_double(Printer).as_stubbed_const }
 
   it "is initialized with a balance of 0" do
@@ -12,6 +13,10 @@ RSpec.describe Account do
     end
     it "depositing 200 increases balance by 2000" do
       expect { subject.deposit(2000) }.to change { subject.balance }.from(0).to(2000)
+    end
+    it "calls new to transaction" do
+      expect(transaction).to receive(:new).with(:credit => 2000)
+      subject.deposit(2000)
     end
   end
 

@@ -3,6 +3,8 @@ GEM
   specs:
     ansi (1.5.0)
     ast (2.4.2)
+    codecov (0.5.2)
+      simplecov (>= 0.15, < 0.22)
     diff-lcs (1.4.4)
     docile (1.4.0)
     parallel (1.20.1)
@@ -56,6 +58,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  codecov
   rake
   rspec (~> 3.5)
   rubocop

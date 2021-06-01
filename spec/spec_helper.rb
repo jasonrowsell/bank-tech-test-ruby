@@ -2,6 +2,7 @@
 
 require "account"
 
+require 'codecov'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -9,6 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   SimpleCov::Formatter::Console
 )
 SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

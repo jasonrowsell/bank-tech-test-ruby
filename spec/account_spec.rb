@@ -23,14 +23,14 @@ RSpec.describe Account do
   describe "#withdraw" do
     context "sufficient funds of 2000" do
       before(:each) do
-        subject.deposit(2000)
+        subject.deposit(1000)
       end
 
       it "withdrawing 100 decreases balance by 100" do
-        expect { subject.withdraw(1000) }.to change { subject.balance }.from(2000).to(1000)
+        expect { subject.withdraw(500) }.to change { subject.balance }.from(1000).to(500)
       end
       it "withdrawing 200 decreases balance by 200" do
-        expect { subject.withdraw(2000) }.to change { subject.balance }.from(2000).to(0)
+        expect { subject.withdraw(1000) }.to change { subject.balance }.from(1000).to(0)
       end
     end
 

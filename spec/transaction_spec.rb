@@ -51,4 +51,11 @@ RSpec.describe Transaction do
     end
   end
 
+  describe "#balance" do
+  it "returns the balance" do
+    subject = described_class.new({ balance: 1000 })
+    expect(subject.balance).to eq 1000
+  end
+end
+
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require "bank_tech_test"
+require "account"
+
 require 'simplecov'
 require 'simplecov-console'
 

@@ -11,10 +11,10 @@ RSpec.describe Printer do
       expect { self.print }.to output(/#{current_date} ||  ||  || \n/).to_stdout
     end
     it "prints the credit of a transaction" do
-      expect { self.print(deposit) }.to output(/#{current_date} || #{2000} ||  || #{3000}\n/).to_stdout
+      expect { self.print(deposit) }.to output(/#{current_date} || 2000 ||  || 3000\n/).to_stdout
     end
     it "prints the debit of a transaction" do
-      expect { self.print(deposit) }.to output(/#{current_date} ||  || #{500} || #{2500}\n/).to_stdout
+      expect { self.print(deposit) }.to output(/#{current_date} ||  || 500 || 2500\n/).to_stdout
     end
   end
 end

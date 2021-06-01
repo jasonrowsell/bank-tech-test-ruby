@@ -17,19 +17,19 @@ class Account
   end
 
   def deposit(amount)
-    create_transaction({credit: amount})
+    create_transaction({ credit: amount })
     @balance += amount
   end
 
   def withdraw(amount)
     raise Exceptions::TransactionError, "Insufficient funds" if amount > @balance
 
-    create_transaction({debit: amount})
+    create_transaction({ debit: amount })
     @balance -= amount
   end
 
   def print_statement
-    @printer.print(@transactions)
+    @printer.new.print(@transactions)
   end
 
   private

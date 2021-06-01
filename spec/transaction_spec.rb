@@ -26,7 +26,7 @@ RSpec.describe Transaction do
 
     context "withdrawing funds" do
       let(:subject) { described_class.new({ debit: 500 }) }
-      
+
       it "returns nil" do
         expect(subject.credit).to be_nil
       end
@@ -44,7 +44,7 @@ RSpec.describe Transaction do
 
     context "withdrawing funds" do
       let(:subject) { described_class.new({ debit: 500 }) }
-      
+
       it "returns the debit amount" do
         expect(subject.debit).to eq 500
       end
@@ -52,10 +52,9 @@ RSpec.describe Transaction do
   end
 
   describe "#balance" do
-  it "returns the balance" do
-    subject = described_class.new({ balance: 1000 })
-    expect(subject.balance).to eq 1000
+    it "returns the balance" do
+      subject = described_class.new({ balance: 1000 })
+      expect(subject.balance).to eq 1000
+    end
   end
-end
-
 end

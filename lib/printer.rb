@@ -1,12 +1,30 @@
+require_relative "conversion"
+
 class Printer
+  include Conversion
+
   STATEMENT_HEADER = "date || credit || debit || balance"
 
-  def self.print(transactions)
+  def print(transactions)
     puts STATEMENT_HEADER
-    
+
     transactions.each do |transaction|
-      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+      puts create_row(transaction).to_s
     end
   end
 
+  private
+
+  def create_row(transaction)
+    [
+      transaction.date,
+      transaction.credit ? to_pounds(transaction.credit) : nil,
+      transaction.debit ? to_pounds(transaction.credit) : nil,
+      to_pounds(transaction.balance)
+    ].join(" || ")
+  end
+
+  def to_pounds(amount)
+    "£#{format("%.2f", amount.to_f)}"
+  end
 end

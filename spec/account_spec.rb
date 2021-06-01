@@ -15,7 +15,7 @@ RSpec.describe Account do
       expect { subject.deposit(2000) }.to change { subject.balance }.from(0).to(2000)
     end
     it "calls new to transaction" do
-      expect(transaction).to receive(:new).with(:credit => 2000)
+      expect(transaction).to receive(:new).with(credit: 2000)
       subject.deposit(2000)
     end
   end
@@ -38,13 +38,6 @@ RSpec.describe Account do
       it "raises an error when attempting to withdraw" do
         expect { subject.withdraw(500) }.to raise_error("Insufficient funds")
       end
-    end
-  end
-
-  describe "#print_statement" do
-    it "calls display function to printer" do
-      expect(printer).to receive(:print)
-      subject.print_statement
     end
   end
 end

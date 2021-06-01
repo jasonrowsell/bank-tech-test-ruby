@@ -26,5 +26,11 @@ RSpec.describe Account do
         expect{ subject.withdraw(200) }.to change{ subject.balance }.from(200).to(0)
       end
     end
+
+    context 'insufficient funds' do
+      it 'raises an error when attempting to withdraw' do
+        expect{ subject.withdraw(100) }.to raise_error("Insufficient funds")
+      end
+    end
   end
 end

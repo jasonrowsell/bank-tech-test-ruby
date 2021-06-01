@@ -1,4 +1,8 @@
+require_relative 'exceptions'
+
 class Account
+  include Exceptions
+
   attr_reader :balance
 
   def initialize
@@ -10,6 +14,7 @@ class Account
   end
 
   def withdraw(amount)
+    raise Exceptions::TransactionError.new("Insufficient funds") if amount > @balance
     @balance -= amount
   end
 end

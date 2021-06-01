@@ -1,5 +1,6 @@
 require "account"
 require "transaction"
+require "printer"
 
 require "codecov"
 require "simplecov"

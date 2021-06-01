@@ -8,7 +8,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   SimpleCov::Formatter::Console
 )
 SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = ".rspec_status"

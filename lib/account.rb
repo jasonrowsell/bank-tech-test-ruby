@@ -3,9 +3,9 @@ require_relative "exceptions"
 class Account
   include Exceptions
 
-  INITIAL_BALANCE = 0
-
   attr_reader :balance
+
+  INITIAL_BALANCE = 0
 
   def initialize
     @balance = INITIAL_BALANCE

@@ -1,5 +1,7 @@
 class Printer
+  STATEMENT_HEADER = "date || credit || debit || balance"
+
   def display
-    puts "date || credit || debit || balance"
+    puts STATEMENT_HEADER
   end
 end

@@ -10,9 +10,9 @@ class Account
   attr_reader :balance, :transactions
 
   def initialize(transaction: Transaction, printer: Printer)
+    @balance = INITIAL_BALANCE
     @transaction = transaction
     @printer = printer
-    @balance = INITIAL_BALANCE
     @transactions = []
   end
 
@@ -29,13 +29,13 @@ class Account
   end
 
   def print_statement
-    @printer.print
+    @printer.print(@transactions)
   end
 
   private
 
   def create_transaction(data)
     new_transaction = @transaction.new(data)
-    @transactions.push(new_transaction)
+    @transactions.unshift(new_transaction)
   end
 end

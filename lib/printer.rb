@@ -1,8 +1,12 @@
 class Printer
   STATEMENT_HEADER = "date || credit || debit || balance"
 
-  def self.print
+  def self.print(transactions)
     puts STATEMENT_HEADER
-    puts "#{Time.now.strftime("%d/%m/%Y")} ||  ||  || "
+    
+    transactions.each do |transaction|
+      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+    end
   end
+
 end

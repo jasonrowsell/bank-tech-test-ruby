@@ -1,8 +1,8 @@
 require "account"
 
-require 'codecov'
-require 'simplecov'
-require 'simplecov-console'
+require "codecov"
+require "simplecov"
+require "simplecov-console"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   SimpleCov::Formatter::Console

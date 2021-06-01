@@ -1,4 +1,5 @@
 require "account"
+require "transaction"
 
 require "codecov"
 require "simplecov"

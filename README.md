@@ -69,25 +69,25 @@ CHANGE = CHANGE.new
 ### User Stories
 
 ```
-As a customer,
-So that I can keep money funds secure,
+As a client,
+So that I can keep funds secure,
 I would like to make a deposit.
 ```
 
 ```
-As a customer,
+As a client,
 So that I can access my funds,
 I would like to make a withdrawal.
 ```
 
 ```
-As a customer,
+As a client,
 So that I can keep a record of my finances,
 I would like to request a bank statement.
 ```
 
 ```
-As a customer,
+As a client,
 So that I can reference my prior transactions,
 I would like my statement to display the date, transaction amount, type, and new balance.
 ```

@@ -1,4 +1,4 @@
-require_relative 'exceptions'
+require_relative "exceptions"
 
 class Account
   include Exceptions
@@ -14,7 +14,8 @@ class Account
   end
 
   def withdraw(amount)
-    raise Exceptions::TransactionError.new("Insufficient funds") if amount > @balance
+    raise Exceptions::TransactionError, "Insufficient funds" if amount > @balance
+
     @balance -= amount
   end
 end

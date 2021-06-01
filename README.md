@@ -128,4 +128,5 @@ I want withdrawals accessible only if sufficient funds are present.
 
 ### Sequence Diagrams
 
+<strong>Depositing Funds</strong>
 ![Depositing funds](./images/deposit.png)

@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
 [Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams)
 
@@ -110,9 +110,8 @@ I want withdrawals accessible only if sufficient funds are present.
 | ------------------------- | ---------------- |
 | Responsibilties           | Collaborators    |
 | ------------------------- | ---------------- |
-| Knows current balance     | Transaction      |
-| Knows transaction records | Printer          |
-| Deposit amount            |                  |
+| Knows transaction records | Transaction      |
+| Deposit amount            | Printer          |
 | Withdraw amount           |                  |
 | Print bank statement      |                  |
 
@@ -123,7 +122,7 @@ I want withdrawals accessible only if sufficient funds are present.
 | Knows date                |                  |
 | Knows credit amount       |                  |
 | Knows debit amount        |                  |
-| Knows updated balance     |                  |
+| Knows balance             |                  |
 
 | Class                       | Printer          |
 | --------------------------- | ---------------- |

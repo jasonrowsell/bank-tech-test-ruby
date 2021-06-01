@@ -1,4 +1,6 @@
 RSpec.describe Account do
+  let(:subject) { described_class.new }
+
   it "is initialized with a balance of 0" do
     expect(subject.balance).to be_zero
   end

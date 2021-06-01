@@ -2,6 +2,6 @@ class Transaction
   attr_reader :amount
 
   def initialize(amount)
-    @amount = 100
+    @amount = amount
   end
 end

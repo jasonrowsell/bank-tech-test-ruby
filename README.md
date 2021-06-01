@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/)
 
-[Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories)
+[Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams)
 
 A sample tech test to write high code quality and demonstrate test driven development process and object oriented design principles.
 

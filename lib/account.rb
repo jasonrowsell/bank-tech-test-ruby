@@ -7,9 +7,9 @@ class Account
 
   attr_reader :balance
 
-  def initialize
-    @transaction = Transaction
-    @printer = Printer
+  def initialize(transaction: Transaction, printer: Printer)
+    @transaction = transaction
+    @printer = printer
     @balance = INITIAL_BALANCE
     @transactions = []
   end

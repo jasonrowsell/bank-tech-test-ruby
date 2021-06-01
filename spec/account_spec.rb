@@ -1,5 +1,5 @@
 RSpec.describe Account do
-  let(:subject) { described_class.new() }
+  let(:subject) { described_class.new }
   let(:printer) { class_double(Printer).as_stubbed_const }
 
   it "is initialized with a balance of 0" do

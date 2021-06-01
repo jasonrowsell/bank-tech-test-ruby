@@ -25,6 +25,6 @@ class Account
   end
 
   def print_statement
-    @printer.new.display
+    @printer.print
   end
 end

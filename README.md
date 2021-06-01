@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
-[Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams)
+[Specification](#specification) | [Getting Started](#getting-started) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams) | [Methodology](#methodology)
 
 A sample tech test to write high code quality and demonstrate test driven development process and object oriented design principles.
 
@@ -35,6 +35,8 @@ date  || credit || debit || balance
 | 14/01/2012 |         | 500.00 | 2500.00 |
 | 13/01/2012 | 2000.00 |        | 3000.00 |
 | 10/01/2012 | 1000.00 |        | 1000.00 |
+
+### Getting Started
 
 ## Usage
 
@@ -135,3 +137,15 @@ I want withdrawals accessible only if sufficient funds are present.
 
 <strong>Depositing Funds</strong>
 ![Depositing funds](./images/deposit.png)
+
+### Methodology
+
+<strong>SOLID Principles of OOP</strong>
+
+- Dependency Injection and DIP
+
+![DIP](./images/DIP.png)
+
+In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, but can function without it. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
+
+This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.

@@ -1,5 +1,7 @@
 # Bank Tech Test
 
+[![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test)
+
 [Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories)
 
 A sample tech test to write high code quality and demonstrate test driven development process and object oriented design principles.

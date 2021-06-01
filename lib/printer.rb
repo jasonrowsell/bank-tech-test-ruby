@@ -1,7 +1,8 @@
 class Printer
-  STATEMENT_HEADER = "date || credit || debit || balance"
+  STATEMENT_HEADER = /date || credit || debit || balance\n/
 
   def display
-    puts STATEMENT_HEADER
+    print STATEMENT_HEADER
+    print "#{Time.now.strftime("%d/%m/%Y")} ||  ||  || "
   end
 end

@@ -1,6 +1,8 @@
 # Bank Tech Test
 
-[Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development)
+[Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [Installation](#installation) | [Usage](#usage) | [Development](#development) | [User Stories](#user-stories)
+
+A sample tech test to write high code quality and demonstrate test driven development process and object oriented design principles.
 
 ## Specification
 
@@ -58,4 +60,38 @@ Once in IRB:
 ```irb
 require './lib/CHANGE.rb'
 CHANGE = CHANGE.new
+```
+
+## Plan
+
+### User Stories
+
+```
+As a customer,
+So that I can keep money funds secure,
+I would like to make a deposit.
+```
+
+```
+As a customer,
+So that I can access my funds,
+I would like to make a withdrawal.
+```
+
+```
+As a customer,
+So that I can keep a record of my finances,
+I would like to request a bank statement.
+```
+
+```
+As a customer,
+So that I can reference my prior transactions,
+I would like my statement to display the date, transaction amount, type, and new balance.
+```
+
+```
+As a Bank Manager,
+In order to maintain a structured business model,
+I want withdrawals accessible only if sufficient funds are present.
 ```

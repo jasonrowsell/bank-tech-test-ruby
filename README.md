@@ -160,7 +160,7 @@ Modules deemed justifiable as they are collections of methods and constants. The
 
 ![DIP](./images/DIP.png)
 
-In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, and can function without them. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
+In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, and can function without them. Furthermore, if we wish to replace dependent classes with a third, we would not need to modify `Account`, which otherwise is a violation of the Open Closed Principle.
 
 This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
 

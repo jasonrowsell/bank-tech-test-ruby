@@ -149,3 +149,13 @@ I want withdrawals accessible only if sufficient funds are present.
 In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, but can function without it. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
 
 This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
+
+## TODO
+
+Guard case
+
+- NaN
+- Clean
+- SRP
+- Review quality
+- Tests

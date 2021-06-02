@@ -125,7 +125,7 @@ date  || credit || debit || balance
 
 - The `Printer` class formats inputted data into a string output. The `print` method iterates through each transaction record and exposes the `create_row` private method in order to format each transaction into a table row. `create_row` utilises `to_pounds`, derived from the `Conversion` module, to convert integers to a '£0.00' format.
 
-### Modules
+### Modules
 
 Modules were used for raising errors, `Exceptions`, and converting integers to currency, `Conversions`.
 
@@ -175,6 +175,7 @@ Private methods are utilised to maintain SRP and expose only what is required.
 ## Evaluation
 
 <strong>Struct / OpenStruct</strong>
+
 ![Struct](./images/struct.png)
 
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Sruct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.

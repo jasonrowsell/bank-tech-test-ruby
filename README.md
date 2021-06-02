@@ -4,7 +4,70 @@
 
 [Specification](#specification) | [Getting Started](#getting-started) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams) | [Methodology](#methodology)
 
-A sample tech test to write high code quality and demonstrate test driven development process and object oriented design principles.
+A sample tech test to practice writing high-quality code, demonstrate TDD and apply OOP/D.
+
+## Getting Started
+
+### Development
+
+Clone this repo.
+To install dependencies:
+
+```shell
+bundle
+```
+
+Run test suites with:
+
+```shell
+rspec
+```
+
+For an interactive prompt that will allow you to experiment:
+
+Run IRB:
+
+```shell
+irb
+```
+
+Once in IRB:
+
+```irb
+require './lib/account.rb'
+account = Account.new
+```
+
+### Usage
+
+A demonstration of how to use the program.
+
+```sh
+> irb -r './lib/account.rb'
+
+> account = Account.new
+
+> account.deposit(1000)
+
+> account.print_statement
+date || credit || debit || balance
+02/06/2021 || £1000.00 || || £1000.00
+
+> account.deposit(2000)
+
+> account.print_statement
+date || credit || debit || balance
+04/06/2021 || £2000.00 || || £3000.00
+02/06/2021 || £100.00 || || £100.00
+
+> account.withdraw(500)
+
+> account.print_statement
+date || credit || debit || balance
+06/06/2021 || || £500.00 || £2500.00
+04/06/2021 || £2000.00 || || £3000.00
+02/06/2021 || £100.00 || || £100.00
+```
 
 ## Specification
 
@@ -36,70 +99,31 @@ date  || credit || debit || balance
 | 13/01/2012 | 2000.00 |        | 3000.00 |
 | 10/01/2012 | 1000.00 |        | 1000.00 |
 
-### Getting Started
+## Design
 
-## Usage
+### Classes
 
-A demonstration of how to use the program.
+<strong>Account</strong>
 
-```sh
-> irb -r './lib/account.rb'
+- The `Account` class maintains the operational data of previous transactions. A transaction is
+  made by calling `withdraw`/`deposit`, which instantiates an instance of the `Transaction` class. The method `current_balance` is called to calculate and store the updated balance in the current transaction. The private method `store_transaction` is exposed for adding the transaction to a sequential list of previously recorded transactions. Printing a statement is
+  called with the method `print_statement` which prints a table using `print`
+  that is derived from the `Print` class. A user would instantiate an `Account`
+  object, use `deposit(amount)` accordingly to deposit funds, then use `print_statement` to construct a visual bank statement.
 
-> account = Account.new
+### Methodology
 
-> account.deposit(1000)
+<strong>SOLID Principles of OOP</strong>
 
-> account.print_statement
-date || credit || debit || balance
-02/06/2021 || £1000.00 || || £1000.00
+- Dependency Injection and DIP
 
-> account.deposit(2000)
+![DIP](./images/DIP.png)
 
-> account.print_statement
-date || credit || debit || balance
-04/06/2021 || £2000.00 || || £3000.00
-02/06/2021 || £100.00 || || £100.00
+In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, but can function without it. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
 
-> account.withdraw(500)
+This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
 
-> account.print_statement
-date || credit || debit || balance
-06/06/2021 || || £500.00 || £2500.00
-04/06/2021 || £2000.00 || || £3000.00
-02/06/2021 || £100.00 || || £100.00
-```
-
-## Development
-
-Clone this repo.
-To install dependencies:
-
-```shell
-bundle
-```
-
-Run test suites with:
-
-```shell
-rspec
-```
-
-For an interactive prompt that will allow you to experiment:
-
-Run IRB:
-
-```shell
-irb
-```
-
-Once in IRB:
-
-```irb
-require './lib/account.rb'
-account = Account.new
-```
-
-## Plan
+## Planning
 
 ### User Stories
 
@@ -165,18 +189,12 @@ I want withdrawals accessible only if sufficient funds are present.
 <strong>Depositing Funds</strong>
 ![Depositing funds](./images/deposit.png)
 
-### Methodology
-
-<strong>SOLID Principles of OOP</strong>
-
-- Dependency Injection and DIP
-
-![DIP](./images/DIP.png)
-
-In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, but can function without it. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
-
-This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
+<strong>Printing Statement</strong>
+![Printing Statement](./images/print.png)
 
 ## Evaluation
 
 <strong>Struct / OpenStruct</strong>
+![Struct](./lib/struct.png)
+
+I have considered converting my Transaction class structure to a Struct/OpenStruct.

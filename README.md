@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
-[Specification](#specification) | [Getting Started](#getting-started) | [User Stories](#user-stories) | [CRC Cards](#crc-cards) | [Sequence Diagrams](#sequence-diagrams) | [Methodology](#methodology)
+[Getting Started](#getting-started) | [Specification](#specification) | [Design](#design) | [Planning](#planning) | [Test Coverage](#test-coverage) | [Evaluation](#evaluation)
 
 A sample tech test to practice writing high-quality code, demonstrate TDD and apply OOP/D.
 
@@ -105,27 +105,80 @@ date  || credit || debit || balance
 
 <strong>Account</strong>
 
-- The `Account` class maintains the operational data of previous transactions. A transaction is
-  made by calling `withdraw`/`deposit`, which instantiates an instance of the `Transaction` class. The method `current_balance` is called to calculate and store the updated balance in the current transaction. The private method `store_transaction` is exposed for adding the transaction to a sequential list of previously recorded transactions. Printing a statement is
+- The `Account` class maintains the operational data of previous transactions, as well as
+  calculating the current account balance. A transaction is made by calling `withdraw` or `deposit`, which instantiates an instance of the `Transaction` class. The method `current_balance` is called to calculate and store the updated balance in the current transaction. The private method `store_transaction` is exposed for adding the transaction
+  to a sequential list of previously recorded transactions. Printing a statement is
   called with the method `print_statement` which prints a table using `print`
-  that is derived from the `Print` class. A user would instantiate an `Account`
+  that is derived from the `Printer` class. A user would instantiate an `Account`
   object, use `deposit(amount)` accordingly to deposit funds, then use `print_statement` to construct a visual bank statement.
 
-  ## Test Coverage
+<strong>Transaction</strong>
 
-  ![Test Coverage](./images/tests.png)
+- The `Transaction` class holds the data from a specific transaction. It knows the account
+  balance at the instance of the transaction, date it was processed, amount, and whether it
+  was a deposit or withdrawal. The `date` attribute is created upon class initialization, in
+  dd/mm/yy format, whilst the `balance` attribute is appended after being stored. The `credit`
+  and `debit` attributes will remain `nil` dependent upon whether the `withdraw` or `deposit`
+  method is called in `Account`.
 
-### Methodology
+<strong>Printer</strong>
 
-<strong>SOLID Principles of OOP</strong>
+- The `Printer` class formats inputted data into a string output. The `print` method iterates through each transaction record and exposes the `create_row` private method in order to format each transaction into a table row. `create_row` utilises `to_pounds`, derived from the `Conversion` module, to convert integers to a '£0.00' format.
 
-- Dependency Injection and DIP
+### Modules
+
+Modules were used for raising errors, `Exceptions`, and converting integers to currency, `Conversions`.
+
+Modules deemed justifiable as they are collections of methods and constants. They cannot generate instances. Classes may generate instances (objects), and have per-instance state (instance variables).
+
+<strong>Exceptions</strong>
+
+- This module holds methods to catch edge cases. Errors are raised dependent upon invalid
+  input or insufficient funds.
+
+<strong>Conversion</strong>
+
+- This module holds methods relating to currency formatting / manipulation. This module was
+  created instead of a private method is `Printer` for flexibility. The module is flexible
+  to add extra related functions if proposed, such as converting to foreign currency or
+  adding interest.
+
+### Testing
+
+- [Test Coverage: 100%](#test-coverage), SimpleCov
+- Testing covers and passes acceptance criteria
+- Prominence on BDD (Behaviour Driven Development)
+- Automated feature testing
+- Unit tests in isolation
+- Red Green Refactor loop
+
+### Object Oriented Principle / Design
+
+- Focus on Single Responsibility Principle
+
+- Dependency Injection and Dependency Inversion Principle
 
 ![DIP](./images/DIP.png)
 
-In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, but can function without it. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
+In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, and can function without them. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
 
 This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
+
+- Encapsulation
+
+Private methods are utilised to maintain SRP and expose only what is required.
+
+## Test Coverage
+
+![Test Coverage](./images/tests.png)
+
+## Evaluation
+
+<strong>Struct / OpenStruct</strong>
+![Struct](./images/struct.png)
+
+I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Sruct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
+It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
 ## Planning
 
@@ -195,10 +248,3 @@ I want withdrawals accessible only if sufficient funds are present.
 
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
-
-## Evaluation
-
-<strong>Struct / OpenStruct</strong>
-![Struct](./lib/struct.png)
-
-I have considered converting my Transaction class structure to a Struct/OpenStruct.

@@ -23,8 +23,4 @@ class Printer
       to_pounds(transaction.balance)
     ].join(" || ")
   end
-
-  def to_pounds(amount)
-    "£#{format("%.2f", amount.to_f)}"
-  end
 end

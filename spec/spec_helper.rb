@@ -1,4 +1,5 @@
 require "account"
+require "conversion"
 require "exceptions"
 require "printer"
 require "transaction"

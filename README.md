@@ -139,7 +139,7 @@ Modules deemed justifiable as they are collections of methods and constants. The
 <strong>Conversion</strong>
 
 - This module holds methods relating to currency formatting / manipulation. This module was
-  created instead of a private method is `Printer` for flexibility. The module is flexible
+  created instead of a private method in `Printer` for flexibility. The module is flexible
   to add extra related functions if proposed, such as converting to foreign currency or
   adding interest.
 

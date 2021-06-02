@@ -42,6 +42,7 @@ date  || credit || debit || balance
 
 A demonstration of how to use the program.
 
+```sh
 > irb -r './lib/account'
 
 > account = Account.new
@@ -49,23 +50,24 @@ A demonstration of how to use the program.
 > account.deposit(1000)
 
 > account.print_statement
-> date || credit || debit || balance
-> 02/06/2021 || £1000.00 || || £1000.00
+date || credit || debit || balance
+02/06/2021 || £1000.00 || || £1000.00
 
 > account.deposit(2000)
 
 > account.print_statement
-> date || credit || debit || balance
-> 04/06/2021 || £2000.00 || || £3000.00
-> 02/06/2021 || £100.00 || || £100.00
+date || credit || debit || balance
+04/06/2021 || £2000.00 || || £3000.00
+02/06/2021 || £100.00 || || £100.00
 
 > account.withdraw(500)
 
 > account.print_statement
-> date || credit || debit || balance
-> 06/06/2021 || || £500.00 || £2500.00
-> 04/06/2021 || £2000.00 || || £3000.00
-> 02/06/2021 || £100.00 || || £100.00
+date || credit || debit || balance
+06/06/2021 || || £500.00 || £2500.00
+04/06/2021 || £2000.00 || || £3000.00
+02/06/2021 || £100.00 || || £100.00
+```
 
 ## Development
 

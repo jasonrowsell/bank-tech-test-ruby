@@ -2,20 +2,21 @@ require_relative "exceptions"
 require_relative "transaction"
 require_relative "printer"
 
+# Handles transaction data, processes desposits or withdrawals, and prints account statements.
 class Account
   include Exceptions
 
   attr_reader :transactions
 
-  def initialize(transaction: Transaction, printer: Printer)
+  def initialize(transaction: Transaction, printer: Printer.new)
     @transaction = transaction
     @printer = printer
     @transactions = []
   end
 
   def current_balance
-    @transactions.inject(0) { |sum, transaction| 
-      transaction.credit.nil? ? sum - transaction.debit : sum + transaction.credit
+    @transactions.inject(0) { |balance, transaction| 
+      transaction.credit.nil? ? balance - transaction.debit : balance + transaction.credit
     }
   end
 
@@ -24,13 +25,12 @@ class Account
   end
 
   def withdraw(amount)
-    raise Exceptions::TransactionError, "Insufficient funds" if amount > current_balance
-
+    validate_transaction(amount)
     create_transaction({ debit: amount })
   end
 
   def print_statement
-    @printer.new.print(@transactions)
+    @printer.print(@transactions)
   end
 
   private
@@ -39,5 +39,9 @@ class Account
     new_transaction = @transaction.new(data)
     new_transaction.balance = current_balance
     @transactions.unshift(new_transaction)
+  end
+
+  def validate_transaction(amount)
+    raise Exceptions::TransactionError, "Insufficient funds" if amount > current_balance
   end
 end

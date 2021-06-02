@@ -96,7 +96,7 @@ Once in IRB:
 
 ```irb
 require './lib/account.rb'
-$ account = Account.new
+account = Account.new
 ```
 
 ## Plan

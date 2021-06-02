@@ -1,3 +1,4 @@
+# Handles data for an individual transaction
 class Transaction
   attr_reader :date, :credit, :debit
   attr_accessor :balance

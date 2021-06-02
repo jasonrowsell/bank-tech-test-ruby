@@ -5,7 +5,7 @@ require_relative "printer"
 class Account
   include Exceptions
 
-  attr_reader :balance, :transactions
+  attr_reader :transactions
 
   def initialize(transaction: Transaction, printer: Printer)
     @transaction = transaction
@@ -13,8 +13,10 @@ class Account
     @transactions = []
   end
 
-  def balance
-    @transactions.inject(0) { |sum, i| !i.credit.nil? ? sum + i.credit : sum - i.debit }
+  def current_balance
+    @transactions.inject(0) { |sum, transaction| 
+      transaction.credit.nil? ? sum - transaction.debit : sum + transaction.credit
+    }
   end
 
   def deposit(amount)
@@ -22,7 +24,7 @@ class Account
   end
 
   def withdraw(amount)
-    raise Exceptions::TransactionError, "Insufficient funds" if amount > balance
+    raise Exceptions::TransactionError, "Insufficient funds" if amount > current_balance
 
     create_transaction({ debit: amount })
   end
@@ -35,6 +37,7 @@ class Account
 
   def create_transaction(data)
     new_transaction = @transaction.new(data)
+    new_transaction.balance = current_balance
     @transactions.unshift(new_transaction)
   end
 end

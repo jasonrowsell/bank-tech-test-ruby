@@ -3,9 +3,9 @@ RSpec.describe Account do
   let(:transaction) { class_double(Transaction).as_stubbed_const }
   let(:printer) { class_double(Printer).as_stubbed_const }
 
-  describe "#balance" do
+  describe "#current_balance" do
     it "is initialized with a balance of 0" do
-      expect(subject.balance).to be_zero
+      expect(subject.current_balance).to be_zero
     end
 
     context "after a series of transactions" do
@@ -16,21 +16,17 @@ RSpec.describe Account do
       end
 
       it "calculates running balance" do
-        expect(subject.balance).to eq 2500
+        expect(subject.current_balance).to eq 2500
       end
     end
   end
 
   describe "#deposit" do
-    it "depositing 100 increases balance by 1000" do
-      expect { subject.deposit(1000) }.to change { subject.balance }.from(0).to(1000)
+    it "depositing 100 increases current_balance by 1000" do
+      expect { subject.deposit(1000) }.to change { subject.current_balance }.from(0).to(1000)
     end
-    it "depositing 200 increases balance by 2000" do
-      expect { subject.deposit(2000) }.to change { subject.balance }.from(0).to(2000)
-    end
-    it "calls new to transaction" do
-      expect(transaction).to receive(:new).with(credit: 2000)
-      subject.deposit(2000)
+    it "depositing 200 increases current_balance by 2000" do
+      expect { subject.deposit(2000) }.to change { subject.current_balance }.from(0).to(2000)
     end
   end
 
@@ -40,11 +36,11 @@ RSpec.describe Account do
         subject.deposit(1000)
       end
 
-      it "withdrawing 100 decreases balance by 100" do
-        expect { subject.withdraw(500) }.to change { subject.balance }.from(1000).to(500)
+      it "withdrawing 100 decreases current_balance by 100" do
+        expect { subject.withdraw(500) }.to change { subject.current_balance }.from(1000).to(500)
       end
-      it "withdrawing 200 decreases balance by 200" do
-        expect { subject.withdraw(1000) }.to change { subject.balance }.from(1000).to(0)
+      it "withdrawing 200 decreases current_balance by 200" do
+        expect { subject.withdraw(1000) }.to change { subject.current_balance }.from(1000).to(0)
       end
     end
 

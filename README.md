@@ -139,7 +139,7 @@ Modules deemed justifiable as they are collections of methods and constants. The
 <strong>Conversion</strong>
 
 - This module holds methods relating to currency formatting / manipulation. This module was
-  created instead of a private method is `Printer` for flexibility. The module is flexible
+  created instead of a private method in `Printer` for flexibility. The module is flexible
   to add extra related functions if proposed, such as converting to foreign currency or
   adding interest.
 
@@ -160,7 +160,7 @@ Modules deemed justifiable as they are collections of methods and constants. The
 
 ![DIP](./images/DIP.png)
 
-In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, and can function without them. Furthermore, if we wish to replace dependent classes with a third, we need to modify `Account`, which is a violation of the Open Closed Principle.
+In this case of dependency injection, `Account` should refrain from a hard dependency on `Transaction` and `Printer`, and can function without them. Furthermore, if we wish to replace dependent classes with a third, we would not need to modify `Account`, which otherwise is a violation of the Open Closed Principle.
 
 This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
 
@@ -178,7 +178,7 @@ Private methods are utilised to maintain SRP and expose only what is required.
 
 ![Struct](./images/struct.png)
 
-I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Sruct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
+I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
 ## Planning

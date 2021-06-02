@@ -111,6 +111,10 @@ date  || credit || debit || balance
   that is derived from the `Print` class. A user would instantiate an `Account`
   object, use `deposit(amount)` accordingly to deposit funds, then use `print_statement` to construct a visual bank statement.
 
+  ## Test Coverage
+
+  ![Test Coverage](./images/tests.png)
+
 ### Methodology
 
 <strong>SOLID Principles of OOP</strong>

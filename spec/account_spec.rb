@@ -28,6 +28,15 @@ RSpec.describe Account do
     it "depositing 200 increases current_balance by 2000" do
       expect { subject.deposit(2000) }.to change { subject.current_balance }.from(0).to(2000)
     end
+
+    context "invalid input" do
+      it "raises error with negative amount" do
+        expect { subject.deposit(-500) }.to raise_error("Invalid input")
+      end
+      it "raises error with non-integer" do
+        expect { subject.deposit("foo") }.to raise_error("Invalid input")
+      end
+    end
   end
 
   describe "#withdraw" do
@@ -45,7 +54,7 @@ RSpec.describe Account do
     end
 
     context "insufficient funds" do
-      it "raises an error when attempting to withdraw" do
+      it "raises error when attempting to withdraw" do
         expect { subject.withdraw(500) }.to raise_error("Insufficient funds")
       end
     end

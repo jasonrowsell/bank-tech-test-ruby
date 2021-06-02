@@ -177,12 +177,6 @@ In this case of dependency injection, `Account` should refrain from a hard depen
 
 This implementation of dependency injection adheres to the SOLID principles of OOD. In this case mostly the Dependency Inversion Principle.
 
-## TODO
+## Evaluation
 
-Guard case
-
-- NaN
-- Clean
-- SRP
-- Review quality
-- Tests
+<strong>Struct / OpenStruct</strong>

@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
-[Getting Started](#getting-started) | [Specification](#specification) | [Design](#design) | [Test Coverage](#test-coverage) | [Evaluation](#evaluation) | | [Planning](#planning) | [Feedback](#feedback)
+[Getting Started](#getting-started) | [Specification](#specification) | [Design](#design) | [Test Coverage](#test-coverage) | [Evaluation](#evaluation) | [Feedback](#feedback) | [Planning](#planning) 
 
 A sample tech test to practice writing high-quality code, demonstrate TDD and apply OOP/D.
 
@@ -181,6 +181,22 @@ Private methods are utilised to maintain SRP and expose only what is required.
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
+## Feedback
+
+> Hi Jason,
+> Here’s the feedback for your bank tech test. Overall, this one’s a pass for me ! Great job ! I just have some minor feedback for
+> you feel free to move onto either Gilded Rose in ruby, or redo this one in JS (or do the gilded rose in JS!)
+>
+> What I liked:
+>
+> - The `bin` files were a good touch as well as a really helpful README. This kind of UX stuff is great :grinning:
+> - Printer class is great, loved that you used a separate conversion class and the way your methods are organized so that you
+>   format late and don’t store them already formatted for currency as a string :printer:
+> - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
+> - The way you used the `inject` method to calculate the balance is picture perfect.
+>   That’s exactly how I’d expect to see it done 🧵
+> - Feature test is great ! ♽
+
 ## Planning
 
 ### User Stories
@@ -249,19 +265,3 @@ I want withdrawals accessible only if sufficient funds are present.
 
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
-
-## Feedback
-
-> Hi Jason,
-> Here’s the feedback for your bank tech test. Overall, this one’s a pass for me ! Great job ! I just have some minor feedback for
-> you feel free to move onto either Gilded Rose in ruby, or redo this one in JS (or do the gilded rose in JS!)
->
-> What I liked:
->
-> - The `bin` files were a good touch as well as a really helpful README. This kind of UX stuff is great :grinning:
-> - Printer class is great, loved that you used a separate conversion class and the way your methods are organized so that you
->   format late and don’t store them already formatted for currency as a string :printer:
-> - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
-> - The way you used the `inject` method to calculate the balance is picture perfect.
->   That’s exactly how I’d expect to see it done 🧵
-> - Feature test is great ! ♽

@@ -263,5 +263,5 @@ I want withdrawals accessible only if sufficient funds are present.
 >   format late and don’t store them already formatted for currency as a string :printer:
 > - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
 > - The way you used the `inject` method to calculate the balance is picture perfect.
->   That’s exactly how I’d expect to see it done :sewing_needle:
+>   That’s exactly how I’d expect to see it done 🧵
 > - Feature test is great ! ♽

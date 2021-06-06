@@ -33,16 +33,6 @@ A sample tech test to practice writing high-quality code, demonstrate TDD and ap
 The test requires to build a program that mimics the functionality of bank account. The program
 is written in Ruby and tested with RSpec.
 
-<div align="center">
-
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
-
 <!-- Getting Started -->
 
 ## Getting Started
@@ -108,15 +98,9 @@ date || credit || debit || balance
 02/06/2021 || £100.00 || || £100.00
 ```
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Spec -->
 
@@ -150,15 +134,9 @@ date  || credit || debit || balance
 | 13/01/2012 | 2000.00 |        | 3000.00 |
 | 10/01/2012 | 1000.00 |        | 1000.00 |
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Design -->
 
@@ -233,15 +211,9 @@ This implementation of dependency injection adheres to the SOLID principles of O
 
 Private methods are utilised to maintain SRP and expose only what is required.
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Test Coverage -->
 
@@ -270,15 +242,9 @@ Using RSpec I was able to test if the code was working as expected. The test fil
 - [RSpec](https://rspec.info/)
   - Used for automated testing.
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Evaluation -->
 
@@ -291,15 +257,9 @@ Using RSpec I was able to test if the code was working as expected. The test fil
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Planning -->
 
@@ -372,15 +332,9 @@ I want withdrawals accessible only if sufficient funds are present.
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
 
-<div align="center">
+[Contents](#table-of-contents)
 
----
-
-[Top](#table-of-contents)
-
----
-
-</div>
+--------
 
 <!-- Feedback -->
 

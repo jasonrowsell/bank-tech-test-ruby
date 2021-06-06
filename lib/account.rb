@@ -1,5 +1,4 @@
 require_relative "exceptions"
-require_relative "transaction"
 require_relative "printer"
 
 # Handles transaction data, processes desposits or withdrawals, and prints account statements.

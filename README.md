@@ -2,9 +2,48 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/146f596069f5d606335f/maintainability)](https://codeclimate.com/github/jasonrowsell/bank-tech-test/maintainability) [![Build Status](https://travis-ci.com/jasonrowsell/bank-tech-test.svg?branch=main)](https://travis-ci.com/jasonrowsell/bank-tech-test) [![codecov](https://codecov.io/gh/jasonrowsell/bank-tech-test/branch/main/graph/badge.svg?token=0IO5IXRL0t)](https://codecov.io/gh/jasonrowsell/bank-tech-test) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/bank-tech-test?branch=main)](https://bettercodehub.com/) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
-[Getting Started](#getting-started) | [Specification](#specification) | [Design](#design) | [Test Coverage](#test-coverage) | [Evaluation](#evaluation) | | [Planning](#planning) | [Feedback](#feedback)
+## Table of Contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Development](#development)
+  - [Usage](#usage)
+- [Spec](#spec)
+  - [Requirements](#requirements)
+  - [Acceptance Criteria](#acceptance-criteria)
+- [Design](#design)
+  - [Classes](#classes)
+  - [Modules](#modules)
+  - [Testing](#testing)
+  - [Object Oriented Principle / Design](#object-oriented-principle-/-design)
+- [Test Coverage](#test-coverage)
+- [Technologies Used](#technologies-used)
+- [Evaluation](#evaluation)
+- [Planning](#planning)
+  - [User Stories](#user-stories)
+  - [CRC Cards](#crc-cards)
+  - [Sequence Diagrams](#sequence-diagrams)
+- [Feedback](#feedback)
+
+<!-- Overview -->
+
+## Overview
 
 A sample tech test to practice writing high-quality code, demonstrate TDD and apply OOP/D.
+The test requires to build a program that mimics the functionality of bank account. The program
+is written in Ruby and tested with RSpec.
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Getting Started -->
 
 ## Getting Started
 
@@ -69,7 +108,19 @@ date || credit || debit || balance
 02/06/2021 || £100.00 || || £100.00
 ```
 
-## Specification
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Spec -->
+
+## Spec
 
 ### Requirements
 
@@ -98,6 +149,18 @@ date  || credit || debit || balance
 | 14/01/2012 |         | 500.00 | 2500.00 |
 | 13/01/2012 | 2000.00 |        | 3000.00 |
 | 10/01/2012 | 1000.00 |        | 1000.00 |
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Design -->
 
 ## Design
 
@@ -145,6 +208,8 @@ Modules deemed justifiable as they are collections of methods and constants. The
 
 ### Testing
 
+Extensive testing and error checking was undertaken throughout the development process. I have broken the spec's into four separate files to make it easier to navigate the tests.
+
 - [Test Coverage: 100%](#test-coverage), SimpleCov
 - Testing covers and passes acceptance criteria
 - Prominence on BDD (Behaviour Driven Development)
@@ -168,9 +233,54 @@ This implementation of dependency injection adheres to the SOLID principles of O
 
 Private methods are utilised to maintain SRP and expose only what is required.
 
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Test Coverage -->
+
 ## Test Coverage
 
+Using RSpec I was able to test if the code was working as expected. The test files can be found [here](spec).
+
 ![Test Coverage](./images/tests.png)
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Technologies Used -->
+
+## Technologies Used
+
+- [Ruby](https://www.ruby-lang.org/en/)
+  - Used for program functionality.
+- [RSpec](https://rspec.info/)
+  - Used for automated testing.
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Evaluation -->
 
 ## Evaluation
 
@@ -180,6 +290,18 @@ Private methods are utilised to maintain SRP and expose only what is required.
 
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Planning -->
 
 ## Planning
 
@@ -250,6 +372,18 @@ I want withdrawals accessible only if sufficient funds are present.
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
 
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>
+
+<!-- Feedback -->
+
 ## Feedback
 
 > Hi Jason,
@@ -265,3 +399,13 @@ I want withdrawals accessible only if sufficient funds are present.
 > - The way you used the `inject` method to calculate the balance is picture perfect.
 >   That’s exactly how I’d expect to see it done :sewing_needle:
 > - Feature test is great ! ♽
+
+<div align="center">
+
+---
+
+[Top](#table-of-contents)
+
+---
+
+</div>

@@ -291,6 +291,8 @@ Using RSpec I was able to test if the code was working as expected. The test fil
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
+<<<<<<< HEAD
+
 <div align="center">
 
 ---
@@ -301,7 +303,24 @@ It provides a pair of getter/setter methods for each attribute that it contains.
 
 </div>
 
-<!-- Planning -->
+# <!-- Planning -->
+
+## Feedback
+
+> Hi Jason,
+> Here’s the feedback for your bank tech test. Overall, this one’s a pass for me ! Great job ! I just have some minor feedback for
+> you feel free to move onto either Gilded Rose in ruby, or redo this one in JS (or do the gilded rose in JS!)
+>
+> What I liked:
+>
+> - The `bin` files were a good touch as well as a really helpful README. This kind of UX stuff is great :grinning:
+> - Printer class is great, loved that you used a separate conversion class and the way your methods are organized so that you
+>   format late and don’t store them already formatted for currency as a string :printer:
+> - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
+> - The way you used the `inject` method to calculate the balance is picture perfect.
+>   That’s exactly how I’d expect to see it done 🧵
+> - Feature test is great ! ♽
+>   > > > > > > 58fac59ea2152c163175f5c82b760bf4144e0a23
 
 ## Planning
 
@@ -371,6 +390,7 @@ I want withdrawals accessible only if sufficient funds are present.
 
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
+<<<<<<< HEAD
 
 <div align="center">
 
@@ -408,4 +428,6 @@ I want withdrawals accessible only if sufficient funds are present.
 
 ---
 
-</div>
+# </div>
+
+> > > > > > > 58fac59ea2152c163175f5c82b760bf4144e0a23

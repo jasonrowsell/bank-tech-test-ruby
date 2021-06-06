@@ -15,7 +15,7 @@
   - [Classes](#classes)
   - [Modules](#modules)
   - [Testing](#testing)
-  - [Object Oriented Principle / Design](#object-oriented-principle-/-design)
+  - [Object Oriented Principle / Design](#object-oriented-principle--design)
 - [Test Coverage](#test-coverage)
 - [Technologies Used](#technologies-used)
 - [Evaluation](#evaluation)
@@ -301,24 +301,7 @@ It provides a pair of getter/setter methods for each attribute that it contains.
 
 </div>
 
-# <!-- Planning -->
-
-## Feedback
-
-> Hi Jason,
-> Here’s the feedback for your bank tech test. Overall, this one’s a pass for me ! Great job ! I just have some minor feedback for
-> you feel free to move onto either Gilded Rose in ruby, or redo this one in JS (or do the gilded rose in JS!)
->
-> What I liked:
->
-> - The `bin` files were a good touch as well as a really helpful README. This kind of UX stuff is great :grinning:
-> - Printer class is great, loved that you used a separate conversion class and the way your methods are organized so that you
->   format late and don’t store them already formatted for currency as a string :printer:
-> - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
-> - The way you used the `inject` method to calculate the balance is picture perfect.
->   That’s exactly how I’d expect to see it done 🧵
-> - Feature test is great ! ♽
->   > > > > > > 58fac59ea2152c163175f5c82b760bf4144e0a23
+<!-- Planning -->
 
 ## Planning
 
@@ -388,7 +371,6 @@ I want withdrawals accessible only if sufficient funds are present.
 
 <strong>Printing Statement</strong>
 ![Printing Statement](./images/print.png)
-<<<<<<< HEAD
 
 <div align="center">
 
@@ -415,7 +397,7 @@ I want withdrawals accessible only if sufficient funds are present.
 >   format late and don’t store them already formatted for currency as a string :printer:
 > - The validation and abstraction of exceptions to give them their own custom Error types was great :rotating_light:
 > - The way you used the `inject` method to calculate the balance is picture perfect.
->   That’s exactly how I’d expect to see it done :sewing_needle:
+>   That’s exactly how I’d expect to see it done 🧵
 > - Feature test is great ! ♽
 
 <div align="center">
@@ -426,6 +408,4 @@ I want withdrawals accessible only if sufficient funds are present.
 
 ---
 
-# </div>
-
-> > > > > > > 58fac59ea2152c163175f5c82b760bf4144e0a23
+</div>

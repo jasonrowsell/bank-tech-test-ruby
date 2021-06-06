@@ -291,8 +291,6 @@ Using RSpec I was able to test if the code was working as expected. The test fil
 I would consider converting my `Transaction` class to a Struct/OpenStruct. A `Struct` is a dummy data container. Unlike an object, it’s used for bundling and serving a set of informations without any logic.
 It provides a pair of getter/setter methods for each attribute that it contains. This is similar to the attr_accessor method for classes. `OpenStruct` acts very similarly to `Struct`, except that it doesn't have a defined list of attributes. It can accept a hash of attributes when instantiated, and you can add new attributes to the object dynamically. It isn't as fast as `Struct`, but it is more flexible.
 
-<<<<<<< HEAD
-
 <div align="center">
 
 ---
